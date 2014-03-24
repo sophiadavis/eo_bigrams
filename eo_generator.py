@@ -1,6 +1,6 @@
 """
-A program to generate a sentence using bigram probabilities calculated from a text,
-and stored using the Pickle library.
+Given a starting word typed by the user, this program uses bigram probabilities (stored in a 
+Pickle file) to generate a sentence.
 
 Sophia Davis, 3/22/2014
 """
@@ -10,7 +10,7 @@ import random
 
 def main():
 	if len(sys.argv) < 3:
-		sys.stderr.write('Usage: python ' + sys.argv[0] + ' word_to_match bigram_model_file\n')
+		sys.stderr.write('Usage: python ' + sys.argv[0] + ' start_word bigram_model_file\n')
 		sys.exit(1)
 	else:
 		bigram_probs = pickle.load(open(sys.argv[2], 'r'))

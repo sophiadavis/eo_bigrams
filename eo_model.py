@@ -18,6 +18,7 @@ def main():
 		sys.stderr.write('Usage: python ' + sys.argv[0] + ' filename.txt\n')
 		sys.exit(1)
 	else:
+		print "Saving bigram probabilities to model.dat"
 		text = ''
 		
 		f = open(sys.argv[1], 'r')
@@ -30,9 +31,8 @@ def main():
 		
 		bigram_cts = get_bigram_counts(word_list)
 		bigram_probs = get_bigram_probs(bigram_cts)
-		print bigram_probs
+		# print bigram_probs
 		pickle.dump(bigram_probs, open('model.dat', 'w'))
-		print "Saving bigram probabilities to model.dat"
 			
 		
 """ 
